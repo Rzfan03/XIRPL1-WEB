@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XI RPL 1</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Flowbite CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12'
+                        },
+                        peach: {
+                            50: '#fff2f2',
+                            100: '#ffe0e0',
+                            200: '#ffc7c7',
+                            300: '#ffa0a0',
+                            400: '#ff6969',
+                            500: '#fa4b4b',
+                            600: '#e82c2c',
+                            700: '#c42121',
+                            800: '#a21f1f',
+                            900: '#862020'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .dark-mode-transition {
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .jumbotron {
+            background: linear-gradient(rgba(0, 0, 0, 0.811), rgba(0, 0, 0, 0.541)), url('./src/asset/img/bg1.jpg') no-repeat center center;
+            background-size: cover;
+            height: 500px;
+        }
+        @media (max-width: 768px) {
+            .jumbotron {
+                height: 600px;
+            }
+        }
+        .profile-card {
+            transition: transform 0.3s ease;
+        }
+        .profile-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-orange-50 dark:bg-gray-900 dark-mode-transition">
+    <!-- Navbar -->
+    <nav class="bg-white border-gray-200 dark:bg-gray-800 shadow-md">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">XI<span class="text-primary-600 dark:text-primary-400">RPL 1</span></span>
+            </a>
+            <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <i class="fa-solid fa-moon hidden dark:block"></i>
+                    <i class="fa-solid fa-sun dark:hidden"></i>
+                </button>
+                <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-800 dark:border-gray-700">
+                    <li>
+                        <a href="#beranda" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary-700 md:p-0 md:dark:hover:text-primary-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 nav-link active">Beranda</a>
+                    </li>
+                    <li>
+                        <a href="#project" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary-700 md:p-0 md:dark:hover:text-primary-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 nav-link">Project</a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/xl.rpl1.smkansa?igsh=MW4yMnZkOHBicnVmZA==" target="_blank" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary-700 md:p-0 md:dark:hover:text-primary-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Instagram</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron flex items-center justify-center" data-aos="fade-down">
+        <div class="text-center text-white px-4">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Kelas XI RPL 1</h1>
+            <p class="text-xl md:text-2xl mb-8">Sekolah Menengah Kejuruan Negeri 1 Sumbawa Besar</p>
+            <a href="#info-kelas" class="bg-primary-500 hover:bg-primary-600 text-white font-bold py-3 px-6 rounded-full inline-flex items-center">
+                Jelajahi Kelas Kami
+                <i class="fa-solid fa-arrow-down ml-2"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Info Kelas Section -->
+    <section id="info-kelas" class="py-16 px-4 mx-auto max-w-screen-xl" data-aos="fade-down">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl dark:text-white">Informasi Kelas</h2>
+            <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">Kenali lebih dekat keluarga besar kelas XII Multimedia</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            <!-- Wali Kelas -->
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md profile-card text-center">
+                <div class="w-24 h-24 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center text-primary-600 dark:text-primary-300 mb-4 mx-auto">
+                    <i class="fa-solid fa-chalkboard-user text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Wali Kelas</h3>
+                <p class="text-primary-600 dark:text-primary-400 font-semibold">mrs.novariany</p>
+                <p class="text-gray-500 dark:text-gray-400 mt-2">Guru Bahasa Inggris</p>
+            </div>
+
+            <!-- Ketua Kelas -->
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md profile-card text-center">
+                <div class="w-24 h-24 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center text-primary-600 dark:text-primary-300 mb-4 mx-auto">
+                    <i class="fa-solid fa-crown text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Ketua Kelas</h3>
+                <p class="text-primary-600 dark:text-primary-400 font-semibold">M Romeo Belaraya</p>
+                <p class="text-gray-500 dark:text-gray-400 mt-2">Angkatan 2024/2025</p>
+            </div>
+
+            <!-- Wakil Ketua -->
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md profile-card text-center">
+                <div class="w-24 h-24 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center text-primary-600 dark:text-primary-300 mb-4 mx-auto">
+                    <i class="fa-solid fa-user-shield text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Wakil Ketua</h3>
+                <p class="text-primary-600 dark:text-primary-400 font-semibold">Rizqy Fajrul Syabani</p>
+                <p class="text-gray-500 dark:text-gray-400 mt-2">Angkatan 2024/2025</p>
+            </div>
+
+            <!-- Bendahara -->
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md profile-card text-center">
+                <div class="w-24 h-24 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center text-primary-600 dark:text-primary-300 mb-4 mx-auto">
+                    <i class="fa-solid fa-coins text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Bendahara</h3>
+                <p class="text-primary-600 dark:text-primary-400 font-semibold">Lydia Az-Zahra quratuayu</p>
+                <p class="text-gray-500 dark:text-gray-400 mt-2">Angkatan 2024/2025</p>
+            </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-8">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">Detail Kelas</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <div class="flex items-start mb-6">
+                        <div class="bg-primary-100 dark:bg-primary-900 p-3 rounded-full mr-4">
+                            <i class="fa-solid fa-users text-primary-600 dark:text-primary-300 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Jumlah Siswa</h4>
+                            <p class="text-gray-600 dark:text-gray-400">32 Siswa (16 Laki-laki, 16 Perempuan)</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start mb-6">
+                        <div class="bg-primary-100 dark:bg-primary-900 p-3 rounded-full mr-4">
+                            <i class="fa-solid fa-door-open text-primary-600 dark:text-primary-300 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Ruangan</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Labkom 5 - Lantai 2</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-start mb-6">
+                        <div class="bg-primary-100 dark:bg-primary-900 p-3 rounded-full mr-4">
+                            <i class="fa-solid fa-medal text-primary-600 dark:text-primary-300 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Prestasi</h4>
+                            <p class="text-gray-600 dark:text-gray-400">-</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-primary-100 dark:bg-primary-900 p-3 rounded-full mr-4">
+                            <i class="fa-solid fa-heart text-primary-600 dark:text-primary-300 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Motto</h4>
+                            <p class="text-gray-600 dark:text-gray-400">"Hidup Gecok!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beranda Section -->
+    <section id="beranda" class="py-16 px-4 mx-auto max-w-screen-xl" data-aos="fade-up">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl dark:text-white">Aktivitas Kelas</h2>
+            <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">Berbagai kegiatan dan aktivitas pembelajaran di kelas kami</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                <div class="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center text-primary-600 dark:text-primary-300 mb-4">
+                    <i class="fa-solid fa-book-open text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Materi Pembelajaran</h3>
+                <p class="text-gray-500 dark:text-gray-400">Akses semua materi pembelajaran yang telah diajarkan di kelas untuk dipelajari kembali kapan saja.</p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                <div class="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center text-primary-600 dark:text-primary-300 mb-4">
+                    <i class="fa-solid fa-laptop-code text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Project Siswa</h3>
+                <p class="text-gray-500 dark:text-gray-400">Lihat berbagai project yang telah dibuat oleh siswa-siswa sebagai hasil dari proses belajar.</p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                <div class="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center text-primary-600 dark:text-primary-300 mb-4">
+                    <i class="fa-solid fa-users text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Komunitas</h3>
+                <p class="text-gray-500 dark:text-gray-400">Bergabung dengan komunitas belajar yang solid dan saling mendukung dalam proses pembelajaran.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Section -->
+    <section id="project" class="py-16 px-4 mx-auto max-w-screen-xl bg-orange-100 dark:bg-gray-800 hidden">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl dark:text-white">Project Siswa XI RPL 1</h2>
+            <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">Berikut adalah kumpulan project yang telah dibuat oleh siswa-siswa kelas XI RPL 1</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Project Cards (10 pieces) would go here -->
+            <!-- I'm including 2 as examples -->
+            <div class="bg-white rounded-lg shadow-md dark:bg-gray-700 overflow-hidden">
+                <img class="w-full h-48 object-cover" src="./src/asset/img/rzfan.JPG" alt="Project Image">
+                <div class="p-5">
+                    <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">Portofolio Rzfann</h3>
+                    <p class="mt-3 text-gray-600 dark:text-gray-400">Portofolio pribadi rzfann,made by rzfann</p>
+                    <div class="mt-4">
+                        <a href="https://rzfann.vercel.app/" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                            Lihat Project
+                            <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md dark:bg-gray-700 overflow-hidden">
+                <img class="w-full h-48 object-cover" src="./src/asset/img/aimnn.JPG" alt="Project Image">
+                <div class="p-5">
+                    <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">Portofolio Aimann</h3>
+                    <p class="mt-3 text-gray-600 dark:text-gray-400">Portofolio personal Aimann,made by aimnn</p>
+                    <div class="mt-4">
+                        <a href="https://portofolio-aimann.vercel.app/" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                            Lihat Project
+                            <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md dark:bg-gray-700 overflow-hidden">
+                <img class="w-full h-48 object-cover" src="./src/asset/img/fauzann.JPG" alt="Project Image">
+                <div class="p-5">
+                    <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">Portofolio Fauzan</h3>
+                    <p class="mt-3 text-gray-600 dark:text-gray-400">Portofolio personal Fauzan,made by aimnn</p>
+                    <div class="mt-4">
+                        <a href="https://fauzan-sepia.vercel.app/" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                            Lihat Project
+                            <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+             <div class="bg-white rounded-lg shadow-md dark:bg-gray-700 overflow-hidden">
+                <img class="w-full h-48 object-cover" src="./src/asset/img/photobooth.JPG" alt="Project Image">
+                <div class="p-5">
+                    <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">PhotoBooth</h3>
+                    <p class="mt-3 text-gray-600 dark:text-gray-400">Take a moment with PhotoBooth</p>
+                    <div class="mt-4">
+                        <a href="https://photo-booth-sandy-ten.vercel.app/" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                            Lihat Project
+                            <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+             <div class="bg-white rounded-lg shadow-md dark:bg-gray-700 overflow-hidden">
+                <img class="w-full h-48 object-cover" src="./src/asset/img/anime.JPG" alt="Project Image">
+                <div class="p-5">
+                    <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">MyAnime</h3>
+                    <p class="mt-3 text-gray-600 dark:text-gray-400">Landing page anime streaming</p>
+                    <div class="mt-4">
+                        <a href="https://my-anime-git-main-tdesain32s-projects.vercel.app/" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                            Lihat Project
+                            <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional 8 project cards would be here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 shadow-md mt-12">
+        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+            <div class="md:flex md:justify-between">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="flex items-center">
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">XI<span class="text-primary-600 dark:text-primary-400">RPL 1</span></span>
+                    </a>
+                    <p class="mt-4 text-gray-600 dark:text-gray-400 max-w-xs">Website resmi kelas kami untuk menampilkan informasi, materi, dan project-project siswa.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+                        <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Materi</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Tutorial</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline">Referensi</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Ikuti Kami</h2>
+                        <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Instagram</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">YouTube</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline">Discord</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                        <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Kebijakan Privasi</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline">Syarat & Ketentuan</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="#" class="hover:underline">KelasKita</a>. All Rights Reserved.
+                </span>
+                <div class="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                        <i class="fab fa-facebook-f"></i>
+                        <span class="sr-only">Facebook page</span>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                        <i class="fab fa-instagram"></i>
+                        <span class="sr-only">Instagram page</span>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                        <i class="fab fa-twitter"></i>
+                        <span class="sr-only">Twitter page</span>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                        <i class="fab fa-github"></i>
+                        <span class="sr-only">GitHub account</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Flowbite JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+    <script>
+  AOS.init();
+</script>
+    <script>
+        // Dark mode toggle
+        const themeToggleBtn = document.getElementById('theme-toggle');
+
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', function() {
+            document.documentElement.classList.toggle('dark');
+            
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('color-theme', 'dark');
+            } else {
+                localStorage.setItem('color-theme', 'light');
+            }
+        });
+
+        // Navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+            
+            // Show beranda section by default
+            document.getElementById('beranda').classList.remove('hidden');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        
+                        const targetId = this.getAttribute('href').substring(1);
+                        
+                        // Hide all sections
+                        sections.forEach(section => {
+                            section.classList.add('hidden');
+                        });
+                        
+                        // Show target section
+                        document.getElementById(targetId).classList.remove('hidden');
+                        
+                        // Update active link
+                        navLinks.forEach(navLink => {
+                            navLink.classList.remove('active', 'text-primary-700', 'dark:text-primary-500');
+                            navLink.classList.add('text-gray-900', 'dark:text-white');
+                        });
+                        
+                        this.classList.add('active', 'text-primary-700', 'dark:text-primary-500');
+                        this.classList.remove('text-gray-900', 'dark:text-white');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
